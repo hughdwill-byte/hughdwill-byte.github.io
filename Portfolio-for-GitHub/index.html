@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugh Williams — Aerospace Engineering &amp; Business Portfolio</title>
+<meta name="description" content="Engineering portfolio of Hugh Williams — aerospace and mechanical engineering student at RMIT University. Aerodynamics, CAD, structural testing, dynamics and software projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --ink:#000000;
+  --muted:#333333;
+  --line:#000000;
+  --soft:#bdbdbd;
+  --accent:#0a4fd6;     /* flat blue */
+  --navy:#1d2b45;       /* flat dark */
+  --teal:#0f7c8c;       /* flat teal */
+  --chip:#e9e9e9;
+  --max:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#ffffff;line-height:1.55}
+a{color:var(--accent)}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif;font-weight:bold;line-height:1.2;margin:0}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--navy);border-bottom:3px solid #000}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px}
+.nav .brand{color:#fff;font-size:1.05rem;font-weight:bold}
+.nav .links{display:flex;gap:18px}
+.nav .links a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:bold}
+.nav .links a:hover{text-decoration:underline}
+@media(max-width:640px){.nav .links{display:none}}
+
+/* Hero (flat, solid colour) */
+.hero{background:var(--navy);color:#fff;border-bottom:4px solid #000}
+.hero .wrap{padding:54px 20px 50px}
+.eyebrow{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:#cfe0ff;font-weight:bold;margin-bottom:14px}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);color:#fff}
+.hero .tag{margin-top:16px;font-size:clamp(1rem,2.2vw,1.18rem);color:#e6ecf5;max-width:62ch}
+.cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;text-decoration:none;font-weight:bold;font-size:.92rem;border:2px solid #000;border-radius:0}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-ghost{background:#fff;color:#000}
+.btn:hover{outline:2px solid #fff}
+.stats{margin-top:34px;display:flex;flex-wrap:wrap;gap:30px}
+.stat .n{font-size:1.5rem;color:#fff;font-weight:bold}
+.stat .l{font-size:.8rem;color:#c4d0e2}
+
+/* Section */
+section{padding:48px 0}
+.sec-head{margin-bottom:26px}
+.sec-head .k{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:bold}
+.sec-head h2{font-size:clamp(1.5rem,3.6vw,2.1rem);margin-top:6px;border-bottom:3px solid #000;display:inline-block;padding-bottom:4px}
+.sec-head p{color:var(--muted);margin:10px 0 0;max-width:64ch}
+
+/* Skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.skillcard{background:#fff;border:2px solid #000;border-radius:0;padding:16px}
+.skillcard h3{font-size:1rem;font-weight:bold;margin-bottom:10px;background:var(--navy);color:#fff;padding:6px 8px;border:2px solid #000}
+.skillcard ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.skillcard li{background:var(--chip);color:#000;font-size:.8rem;padding:4px 8px;border:1px solid #000}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{background:#fff;border:2px solid #000;color:#000;font-size:.85rem;font-weight:bold;padding:7px 13px;border-radius:0;cursor:pointer;font-family:inherit}
+.filter.active{background:var(--navy);color:#fff}
+
+/* Project grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:#fff;border:2px solid #000;border-radius:0;overflow:hidden;display:flex;flex-direction:column}
+.thumb{aspect-ratio:16/10;background:#f0f0f0;border-bottom:2px solid #000;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.code-thumb{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;padding:20px;color:#fff;font-family:'Courier New',monospace;background:var(--navy)}
+.code-thumb .glyph{font-size:1.4rem}
+.code-thumb .fn{font-size:.9rem}
+.badges{position:absolute;top:8px;left:8px;display:flex;gap:6px}
+.badge{font-size:.7rem;font-weight:bold;padding:3px 7px;border:2px solid #000;background:#fff;color:#000}
+.badge.group{background:var(--teal);color:#fff}
+.badge.indiv{background:var(--accent);color:#fff}
+.card-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.card-body .date{font-size:.76rem;color:var(--accent);font-weight:bold;text-transform:uppercase}
+.card-body h3{font-size:1.12rem;margin:5px 0 3px}
+.card-body .ctx{font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.card-body p{margin:0 0 10px;font-size:.88rem;color:#222}
+.card-body p .role{color:#000;font-weight:bold}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:auto 0 12px}
+.chip{font-size:.74rem;background:var(--chip);color:#000;padding:3px 7px;border:1px solid #000}
+.result{font-size:.85rem;background:#eef4f5;border:1px solid #000;border-left:5px solid var(--teal);padding:8px 10px;color:#11343a;margin-bottom:12px}
+.card-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto}
+.card-links a{font-size:.83rem;font-weight:bold;color:var(--accent);text-decoration:underline}
+
+/* Footer */
+footer{background:var(--navy);color:#fff;padding:44px 0 34px;border-top:4px solid #000}
+footer h2{color:#fff;font-size:1.6rem;margin-bottom:10px}
+footer p{color:#d4ddec;max-width:54ch}
+.foot-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.foot-bottom{margin-top:34px;padding-top:18px;border-top:2px solid #4a5a76;font-size:.8rem;color:#b6c2d6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand">Hugh Williams</span>
+    <div class="links">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/hughdwill-byte" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Studying Aerospace Engineering &amp; Business · RMIT University</div>
+    <h1>Hugh Williams</h1>
+    <p class="tag">A collection of my university and personal engineering projects.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#projects">View projects ↓</a>
+      <a class="btn btn-ghost" href="mailto:hughdwill@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://github.com/hughdwill-byte" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </div>
+    </div>
+  </header>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Capabilities</div>
+      <h2>Skills</h2>
+      
+    </div>
+    <div class="skillgrid">
+      <div class="skillcard">
+        <h3><span class="dot"></span>Design &amp; CAD</h3>
+        <ul>
+          <li>SolidWorks (parts &amp; assemblies)</li><li>Engineering drawings</li><li>Design journals</li>
+          <li>Concept generation</li><li>Iterative design</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h3><span class="dot"></span>Aerodynamics &amp; testing</h3>
+        <ul>
+          <li>Subsonic wind-tunnel testing</li><li>Aerofoil lift &amp; pressure analysis</li>
+          <li>Boundary-layer analysis</li><li>NACA aerofoil selection</li><li>Glider design</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h3><span class="dot"></span>Mechanics &amp; materials</h3>
+        <ul>
+          <li>Structural strength testing</li><li>Composite wing fabrication</li>
+          <li>Weighted material selection</li><li>Engineering dynamics</li><li>Moment of inertia analysis</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h3><span class="dot"></span>Programming &amp; data</h3>
+        <ul>
+          <li>Python</li><li>MATLAB</li><li>TypeScript / Next.js</li><li>SQL / PostgreSQL</li>
+          <li>Machine learning (from scratch)</li><li>Excel data analysis</li><li>Power Automate</li>
+        </ul>
+      </div>
+      <div class="skillcard">
+        <h3><span class="dot"></span>Engineering practice</h3>
+        <ul>
+          <li>Technical reporting</li><li>Team collaboration</li><li>Requirements &amp; constraints</li>
+          <li>Risk assessment</li><li>Validation vs. literature</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Portfolio</div>
+      <h2>Projects</h2>
+      <p>Group projects note my individual contribution.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="aero">Aerospace</button>
+      <button class="filter" data-f="mech">Mechanical</button>
+      <button class="filter" data-f="software">Software</button>
+    </div>
+
+    <div class="grid" id="grid"><!-- cards injected --></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Open to aerospace and mechanical engineering internships and graduate roles. The fastest way to reach me is email.</p>
+    <div class="foot-links">
+      <a class="btn btn-primary" href="mailto:hughdwill@gmail.com">hughdwill@gmail.com</a>
+      <a class="btn btn-ghost" href="https://github.com/hughdwill-byte" target="_blank" rel="noopener">github.com/hughdwill-byte</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Hugh Williams · Aerospace Engineering &amp; Business</span>
+      <span>Built as a living portfolio · last updated June 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+const P=[
+ {cat:"aero",img:"assets/img/wingbox687.png",date:"October 2025",title:"Composite Airfoil — Design, Build &amp; Test",report:"reports/Composite-Airfoil-Report.pdf",ctx:"AERO2687 Intro to Aerospace Engineering · Team of 4 (Team 49)",grp:"Group",
+  desc:"Designed, manufactured and wind-tunnel tested a small-scale composite NACA 2412 airfoil section — foam core, ply layup and an embedded steel spar — then compared its measured lift-to-drag ratio against theory.",
+  role:"My role: support testing, plus collaborative design and hand fabrication of the airfoil.",
+  chips:["NACA 2412","Composite layup","Wind-tunnel testing","Lift-to-drag"],
+  result:"Measured lift-to-drag closely matched the theoretical NACA 2412 prediction, validating the design and build.",links:[]},
+
+ {cat:"aero",img:"assets/img/glider.png",date:"June 2026",title:"Design-Build-Fly Chuck Glider",report:"reports/DBF-Glider-Report.pdf",ctx:"AERO2579 Principles of Aerodynamics · Team (Group 27)",grp:"Group",
+  desc:"Designed a hand-launched chuck glider optimised for maximum airborne time, evaluating five NACA aerofoils for lift, drag and low-speed stability.",
+  role:"My role: aerodynamic analysis and design evaluation within the group.",
+  chips:["NACA aerofoils","Aspect ratio","Stability","Flight test"],
+  result:"Achieved consistent, repeatable, balanced flight across all test runs; identified tail/elevator sink-rate as the key future improvement.",links:[]},
+
+ {cat:"aero",img:"assets/img/wt2.png",date:"May 2026",title:"Wind Tunnel — Boundary Layer Growth",report:"reports/Wind-Tunnel-Lab2-Boundary-Layer.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report",grp:"Individual",
+  desc:"Measured velocity profiles over a flat plate in the AF1300 subsonic wind tunnel to map laminar and turbulent boundary-layer growth.",
+  role:"Individually authored report; tunnel data collected from the lab session.",
+  chips:["Wind tunnel","Boundary layer","Velocity profiles","Excel"],
+  result:"Reconstructed boundary-layer velocity profiles at 25, 30 and 35 m/s freestream, showing the near-wall velocity deficit filling out toward the free stream.",links:[]},
+
+ {cat:"aero",img:"assets/img/wt1.png",date:"April 2026",title:"Wind Tunnel — Aerofoil Lift",report:"reports/Wind-Tunnel-Lab1-Aerofoil-Lift.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report (group-collected data)",grp:"Individual",
+  desc:"Determined the lift coefficient of a NACA 0012 aerofoil vs. angle of attack using both surface pressure taps and a force balance, then validated against literature.",
+  role:"Individually authored report; raw tunnel data collected as a group (grp 8).",
+  chips:["NACA 0012","Pressure distribution","Force balance","Validation"],
+  result:"Plotted the measured lift curve — capturing the rise to stall near 14° — and compared the pressure-tap and force-balance methods against literature values.",links:[]},
+
+ {cat:"mech",img:"assets/img/rover.png",date:"September 2025",title:"Lunar Rover — Powerpack &amp; Solar Module",report:"reports/Lunar-Rover-Design-Journal.pdf",reportLabel:"Design journal (PDF)",ctx:"OENG1250 Intro to Engineering Design · Individual (within Group 184)",grp:"Individual",
+  desc:"Designed the energy-storage powerpack and solar module for a lunar rover, packaging cylindrical 18650 Li-ion cells within mass and assembly constraints.",
+  role:"Individual component design, CAD and design journal; integrated with the team's rover assembly.",
+  chips:["SolidWorks","Li-ion sizing","Packaging","Design journal"],
+  result:"Produced a constraint-compliant powerpack design with full CAD models and a documented brainstorm-to-detail design process.",links:[]},
+
+ {cat:"mech",img:"assets/img/matsel.png",date:"June 2026",title:"Material Selection for a Range of Applications",report:"reports/Material-Selection-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Team of 5 (Group 29)",grp:"Group",
+  desc:"Selected optimal materials for five demanding components (bumper bar, window latch, pressure vessel, LH₂ tank, turbine blade) using normalised weighted decision matrices.",
+  role:"My role: introduction, methodology, bumper-bar and window-latch selection, plus report formatting and reviewing.",
+  chips:["Decision matrix","Material properties","CES-style selection"],
+  result:"Recommended DP590 dual-phase steel (bumper) and C95800 Ni-Al bronze (latch); ranked candidates on safety, cost and toughness.",links:[]},
+
+ {cat:"mech",img:"assets/img/sma.png",date:"April 2026",title:"Shape-Memory Alloys",report:"reports/Shape-Memory-Alloys-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Individual",grp:"Individual",
+  desc:"Research report explaining the metallurgy of shape-memory alloys — the austenite/martensite transformation — and their engineering applications.",
+  role:"Individually researched and written, with a structured database search and source-reliability check.",
+  chips:["Materials science","Phase transformation","Technical research"],
+  result:"Explained SMA mechanisms, manufacturing and trade-offs, with applications across actuation, biomedical and aerospace uses.",links:[]},
+
+ {cat:"mech",img:"assets/img/crank.png",date:"June 2026",title:"Moment of Inertia of a Crankshaft",report:"reports/Crankshaft-Moment-of-Inertia.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
+  desc:"Experimentally determined the mass moment of inertia of an automobile crankshaft and compared it with a parallel-axis-theorem calculation.",
+  role:"Individual experiment, analysis and report.",
+  chips:["Dynamics","Parallel-axis theorem","Experimental MOI"],
+  result:"Quantified the percentage difference between measured and theoretical inertia and discussed sources of error.",links:[]},
+
+ {cat:"mech",img:"assets/img/proj.png",date:"May 2026",title:"Study of Projectile Motion",report:"reports/Projectile-Motion-Study.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
+  desc:"Investigated 2-D projectile motion across launch ranges and angles, comparing measured trajectories, velocities and flight times against theory.",
+  role:"Individual experiment, calculation and report.",
+  chips:["Kinematics","Trajectory analysis","Error analysis"],
+  result:"Validated launch velocities and times against analytical predictions and quantified percentage error per configuration.",links:[]},
+
+ {cat:"mech",img:"assets/img/wingbox.png",date:"2025",title:"Wing Box Strength Analysis (Progress Report)",report:"reports/Wing-Box-Strength-Analysis.pdf",ctx:"Intro to Mechanical Engineering · Group",grp:"Group",
+  desc:"Progress report for an aluminium wing-box project: maximising strength-to-weight through strength testing, a materials investigation and geometry study.",
+  role:"My role: strength-test results &amp; analysis, methodology and materials sections (intro/conclusion by teammates).",
+  chips:["Structural testing","Aluminium","Geometry study"],
+  result:"Documented strength-test methodology and early design, framing the strength-to-weight optimisation problem with data.",links:[]},
+
+ {cat:"mech",img:"assets/img/solar.png",date:"May 2025",title:"Project SolarAid — Emergency Solar Generator",report:"reports/SolarAid-Design-Proposal.pdf",ctx:"Intro to Professional Engineering Practice · Team of 4 (Group 3)",grp:"Group",
+  desc:"Design proposal for a portable, solar-powered emergency generator to supply power to disaster-prone, vulnerable communities.",
+  role:"Collaborative design; contributed to concept screening, requirements and the design proposal.",
+  chips:["Renewable energy","Requirements","Concept screening","CAD"],
+  result:"Screened 16 concepts to a single solution: an MPPT solar generator in a fireproof ACP enclosure meeting flood, heat and emissions constraints.",links:[]},
+
+ {cat:"software",date:"2025",title:"Unit Converter UI (MATLAB)",report:"reports/Unit-Converter-MATLAB.pdf",reportLabel:"Project report (PDF)",ctx:"Intro to Professional Engineering Practice · Individual",grp:"Individual",
+  glyph:"⌗",fn:"unitconverter.m",img:"assets/img/unit.png",
+  desc:"A text-based metric⇄imperial unit converter (temperature, length, volume) with menu navigation, input validation and error handling.",
+  role:"Individually designed, flow-charted and implemented in MATLAB.",
+  chips:["MATLAB","UI logic","Input validation","Flowcharting"],
+  result:"Reliable menu-driven converter that gracefully handles invalid input and returns the user to the correct menu state.",links:[]},
+
+ {cat:"software",date:"Personal · 2025–26",title:"Resume Shortlist Formatter",ctx:"Commercial commission · Individual",grp:"Individual",
+  glyph:"⌬",fn:"shortlist_reformatter.py",
+  desc:"A commissioned software tool, built and delivered as a paid engagement for an executive recruitment firm, that automatically reformats candidate shortlist reports into the company's branded Word-document template.",
+  role:"Sole developer: designed and delivered the parsing and document-generation pipeline end to end for a paying client.",
+  chips:["Python","python-docx","Client delivery","Automation"],
+  result:"Adopted by the business to turn raw shortlist inputs into a consistent, client-ready report in a single step, replacing a manual formatting process.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Galvin-Rowley-Resume-Formater"}]},
+
+ {cat:"software",date:"Personal · 2025–26",title:"Perceptron (from scratch)",ctx:"Personal project · Individual",grp:"Individual",
+  glyph:"◉",fn:"perceptron_api.py",
+  desc:"A perceptron / single-layer neural network implemented from first principles in Python, wrapped in an API and deployed.",
+  role:"Built and trained the model, exposed it via an API, and deployed it.",
+  chips:["Python","Machine learning","API","Deployment"],
+  result:"Working classifier trained on a synthetic dataset, served through a deployable API endpoint.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Perceptron"}]},
+
+ {cat:"software",date:"Personal · 2025–26",title:"ASX Trading Program",ctx:"Personal project · Individual",grp:"Individual",
+  glyph:"▤",fn:"stocktrade.py",
+  desc:"A Python program that models ASX stock behaviour, tracks short-position data and generates trading reports using a machine-learning component.",
+  role:"Designed the data pipeline, ML model and reporting scripts.",
+  chips:["Python","Machine learning","Data pipeline","Finance"],
+  result:"Automated ingestion of available symbols and short-position data into ranked trade reports.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/ASX-Trading-Program"}]},
+
+ {cat:"software",date:"Personal · 2025–26",title:"Spotify DJ Perceptron",ctx:"Personal project · Individual",grp:"Individual",
+  glyph:"♬",fn:"song_matcher.py",
+  desc:"A tool that matches songs for smooth DJ transitions using track timing and beat data pulled from Spotify and Beatport.",
+  role:"Built the matching logic and the Spotify/Beatport timing importers.",
+  chips:["Python","Spotify API","Audio features","Matching"],
+  result:"Suggests compatible next tracks and transition points from a song's tempo and timing profile.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Spotify-DJ-Perceptron"}]},
+
+ {cat:"software",date:"Personal · 2025–26 (in progress)",title:"Wine Cellar App",ctx:"Personal project · Individual",grp:"Individual",
+  glyph:"▦",fn:"Next.js · TypeScript",
+  desc:"A full-stack personal wine-cellar manager: catalog, inventory tracking and a structured tasting journal, with an AU regional focus.",
+  role:"Architecting and building the full stack; currently a Phase-1 MVP in progress.",
+  chips:["Next.js","TypeScript","PostgreSQL","Prisma","Auth.js","Tailwind"],
+  result:"Working catalog, inventory and tasting-journal data model with auth and a tested API surface.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Wine-Cellar-App"}]},
+
+ {cat:"software",date:"Personal · 2025–26",title:"Daily Ranked News",ctx:"Personal project · Individual",grp:"Individual",
+  glyph:"✉",fn:"Power Automate flow",
+  desc:"An automated workflow that gathers the day's news, ranks the stories and delivers a digest by email each day.",
+  role:"Designed the Power Automate flow and email report; built as a no-code automation.",
+  chips:["Power Automate","Automation","APIs","Email"],
+  result:"Hands-off daily ranked-news email digest.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Ranked-Daily-News"}]},
+];
+
+function cardHTML(p){
+  const badge = `<span class="badge ${p.grp==='Group'?'group':'indiv'}">${p.grp}</span>`;
+  let thumb;
+  if(p.img && p.cat!=='software'){
+    thumb=`<div class="thumb"><img src="${p.img}" alt="${p.title} project visual" loading="lazy"><div class="badges">${badge}</div></div>`;
+  } else if(p.img){ // software with a real figure (unit converter)
+    thumb=`<div class="thumb"><img src="${p.img}" alt="${p.title} project visual" loading="lazy"><div class="badges">${badge}</div></div>`;
+  } else {
+    thumb=`<div class="thumb code-thumb" >
+      <span class="glyph">${p.glyph||'{ }'}</span><span class="fn">${p.fn||''}</span>
+      <div class="badges">${badge}</div></div>`;
+  }
+  const chips=(p.chips||[]).map(c=>`<span class="chip">${c}</span>`).join('');
+  const links=(p.links||[]).map(l=>`<a href="${l.u}" target="_blank" rel="noopener">${l.t} ↗</a>`).join('');
+  const report = p.report?`<a href="${p.report}" target="_blank" rel="noopener">${p.reportLabel||'Report (PDF)'} ↗</a>`:'';
+  return `<article class="card" data-cat="${p.cat}">
+    ${thumb}
+    <div class="card-body">
+      <div class="date">${p.date}</div>
+      <h3>${p.title}</h3>
+      <div class="ctx">${p.ctx}</div>
+      <p>${p.desc}</p>
+      <p><span class="role">${p.role}</span></p>
+      <div class="chips">${chips}</div>
+      <div class="result">${p.result}</div>
+      <div class="card-links">${links}${report}</div>
+    </div></article>`;
+}
+
+const grid=document.getElementById('grid');
+grid.innerHTML=P.map(cardHTML).join('');
+
+document.querySelectorAll('.filter').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const f=b.dataset.f;
+    document.querySelectorAll('.card').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'flex':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
