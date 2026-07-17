@@ -95,6 +95,7 @@ section{padding:48px 0}
 .result{font-size:.85rem;background:#eef4f5;border:1px solid #000;border-left:5px solid var(--teal);padding:8px 10px;color:#11343a;margin-bottom:12px}
 .card-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto}
 .card-links a{font-size:.83rem;font-weight:bold;color:var(--accent);text-decoration:underline}
+.note-mini{font-size:.66rem;color:#9aa3ad;margin-top:9px;font-style:italic}
 
 /* Footer */
 footer{background:var(--navy);color:#fff;padding:44px 0 34px;border-top:4px solid #000}
@@ -218,74 +219,74 @@ footer p{color:#d4ddec;max-width:54ch}
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 const P=[
- {cat:"aero",img:"assets/img/wingbox687.png",date:"October 2025",title:"Composite Airfoil — Design, Build &amp; Test",report:"reports/Composite-Airfoil-Report.pdf",ctx:"AERO2687 Intro to Aerospace Engineering · Team of 4 (Team 49)",grp:"Group",
+ {cat:"aero",img:"wingbox687.png",date:"October 2025",title:"Composite Airfoil — Design, Build &amp; Test",report:"Composite-Airfoil-Report.pdf",ctx:"AERO2687 Intro to Aerospace Engineering · Team of 4 (Team 49)",grp:"Group",
   desc:"Designed, manufactured and wind-tunnel tested a small-scale composite NACA 2412 airfoil section — foam core, ply layup and an embedded steel spar — then compared its measured lift-to-drag ratio against theory.",
   role:"My role: support testing, plus collaborative design and hand fabrication of the airfoil.",
   chips:["NACA 2412","Composite layup","Wind-tunnel testing","Lift-to-drag"],
   result:"Measured lift-to-drag closely matched the theoretical NACA 2412 prediction, validating the design and build.",links:[]},
 
- {cat:"aero",img:"assets/img/glider.png",date:"June 2026",title:"Design-Build-Fly Chuck Glider",report:"reports/DBF-Glider-Report.pdf",ctx:"AERO2579 Principles of Aerodynamics · Team (Group 27)",grp:"Group",
+ {cat:"aero",img:"glider.png",date:"June 2026",title:"Design-Build-Fly Chuck Glider",report:"DBF-Glider-Report.pdf",ctx:"AERO2579 Principles of Aerodynamics · Team (Group 27)",grp:"Group",
   desc:"Designed a hand-launched chuck glider optimised for maximum airborne time, evaluating five NACA aerofoils for lift, drag and low-speed stability.",
   role:"My role: aerodynamic analysis and design evaluation within the group.",
   chips:["NACA aerofoils","Aspect ratio","Stability","Flight test"],
   result:"Achieved consistent, repeatable, balanced flight across all test runs; identified tail/elevator sink-rate as the key future improvement.",links:[]},
 
- {cat:"aero",img:"assets/img/wt2.png",date:"May 2026",title:"Wind Tunnel — Boundary Layer Growth",report:"reports/Wind-Tunnel-Lab2-Boundary-Layer.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report",grp:"Individual",
+ {cat:"aero",img:"wt2.png",date:"May 2026",title:"Wind Tunnel — Boundary Layer Growth",report:"Wind-Tunnel-Lab2-Boundary-Layer.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report",grp:"Individual",
   desc:"Measured velocity profiles over a flat plate in the AF1300 subsonic wind tunnel to map laminar and turbulent boundary-layer growth.",
   role:"Individually authored report; tunnel data collected from the lab session.",
   chips:["Wind tunnel","Boundary layer","Velocity profiles","Excel"],
   result:"Reconstructed boundary-layer velocity profiles at 25, 30 and 35 m/s freestream, showing the near-wall velocity deficit filling out toward the free stream.",links:[]},
 
- {cat:"aero",img:"assets/img/wt1.png",date:"April 2026",title:"Wind Tunnel — Aerofoil Lift",report:"reports/Wind-Tunnel-Lab1-Aerofoil-Lift.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report (group-collected data)",grp:"Individual",
+ {cat:"aero",img:"wt1.png",date:"April 2026",title:"Wind Tunnel — Aerofoil Lift",report:"Wind-Tunnel-Lab1-Aerofoil-Lift.pdf",ctx:"AERO2579 Principles of Aerodynamics · Individual report (group-collected data)",grp:"Individual",
   desc:"Determined the lift coefficient of a NACA 0012 aerofoil vs. angle of attack using both surface pressure taps and a force balance, then validated against literature.",
   role:"Individually authored report; raw tunnel data collected as a group (grp 8).",
   chips:["NACA 0012","Pressure distribution","Force balance","Validation"],
   result:"Plotted the measured lift curve — capturing the rise to stall near 14° — and compared the pressure-tap and force-balance methods against literature values.",links:[]},
 
- {cat:"mech",img:"assets/img/rover.png",date:"September 2025",title:"Lunar Rover — Powerpack &amp; Solar Module",report:"reports/Lunar-Rover-Design-Journal.pdf",reportLabel:"Design journal (PDF)",ctx:"OENG1250 Intro to Engineering Design · Individual (within Group 184)",grp:"Individual",
+ {cat:"mech",img:"rover.png",date:"September 2025",title:"Lunar Rover — Powerpack &amp; Solar Module",report:"Lunar-Rover-Design-Journal.pdf",reportLabel:"Design journal (PDF)",ctx:"OENG1250 Intro to Engineering Design · Individual (within Group 184)",grp:"Individual",
   desc:"Designed the energy-storage powerpack and solar module for a lunar rover, packaging cylindrical 18650 Li-ion cells within mass and assembly constraints.",
   role:"Individual component design, CAD and design journal; integrated with the team's rover assembly.",
   chips:["SolidWorks","Li-ion sizing","Packaging","Design journal"],
   result:"Produced a constraint-compliant powerpack design with full CAD models and a documented brainstorm-to-detail design process.",links:[]},
 
- {cat:"mech",img:"assets/img/matsel.png",date:"June 2026",title:"Material Selection for a Range of Applications",report:"reports/Material-Selection-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Team of 5 (Group 29)",grp:"Group",
+ {cat:"mech",img:"matsel.png",date:"June 2026",title:"Material Selection for a Range of Applications",report:"Material-Selection-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Team of 5 (Group 29)",grp:"Group",
   desc:"Selected optimal materials for five demanding components (bumper bar, window latch, pressure vessel, LH₂ tank, turbine blade) using normalised weighted decision matrices.",
   role:"My role: introduction, methodology, bumper-bar and window-latch selection, plus report formatting and reviewing.",
   chips:["Decision matrix","Material properties","CES-style selection"],
   result:"Recommended DP590 dual-phase steel (bumper) and C95800 Ni-Al bronze (latch); ranked candidates on safety, cost and toughness.",links:[]},
 
- {cat:"mech",img:"assets/img/sma.png",date:"April 2026",title:"Shape-Memory Alloys",report:"reports/Shape-Memory-Alloys-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Individual",grp:"Individual",
+ {cat:"mech",img:"sma.png",date:"April 2026",title:"Shape-Memory Alloys",report:"Shape-Memory-Alloys-Report.pdf",ctx:"MIET2115 Mechanics &amp; Materials 2 · Individual",grp:"Individual",
   desc:"Research report explaining the metallurgy of shape-memory alloys — the austenite/martensite transformation — and their engineering applications.",
   role:"Individually researched and written, with a structured database search and source-reliability check.",
   chips:["Materials science","Phase transformation","Technical research"],
   result:"Explained SMA mechanisms, manufacturing and trade-offs, with applications across actuation, biomedical and aerospace uses.",links:[]},
 
- {cat:"mech",img:"assets/img/crank.png",date:"June 2026",title:"Moment of Inertia of a Crankshaft",report:"reports/Crankshaft-Moment-of-Inertia.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
+ {cat:"mech",img:"crank.png",date:"June 2026",title:"Moment of Inertia of a Crankshaft",report:"Crankshaft-Moment-of-Inertia.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
   desc:"Experimentally determined the mass moment of inertia of an automobile crankshaft and compared it with a parallel-axis-theorem calculation.",
   role:"Individual experiment, analysis and report.",
   chips:["Dynamics","Parallel-axis theorem","Experimental MOI"],
   result:"Quantified the percentage difference between measured and theoretical inertia and discussed sources of error.",links:[]},
 
- {cat:"mech",img:"assets/img/proj.png",date:"May 2026",title:"Study of Projectile Motion",report:"reports/Projectile-Motion-Study.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
+ {cat:"mech",img:"proj.png",date:"May 2026",title:"Study of Projectile Motion",report:"Projectile-Motion-Study.pdf",ctx:"MIET2134 Engineering Dynamics · Individual",grp:"Individual",
   desc:"Investigated 2-D projectile motion across launch ranges and angles, comparing measured trajectories, velocities and flight times against theory.",
   role:"Individual experiment, calculation and report.",
   chips:["Kinematics","Trajectory analysis","Error analysis"],
   result:"Validated launch velocities and times against analytical predictions and quantified percentage error per configuration.",links:[]},
 
- {cat:"mech",img:"assets/img/wingbox.png",date:"2025",title:"Wing Box Strength Analysis (Progress Report)",report:"reports/Wing-Box-Strength-Analysis.pdf",ctx:"Intro to Mechanical Engineering · Group",grp:"Group",
+ {cat:"mech",img:"wingbox.png",date:"2025",title:"Wing Box Strength Analysis (Progress Report)",report:"Wing-Box-Strength-Analysis.pdf",ctx:"Intro to Mechanical Engineering · Group",grp:"Group",
   desc:"Progress report for an aluminium wing-box project: maximising strength-to-weight through strength testing, a materials investigation and geometry study.",
   role:"My role: strength-test results &amp; analysis, methodology and materials sections (intro/conclusion by teammates).",
   chips:["Structural testing","Aluminium","Geometry study"],
   result:"Documented strength-test methodology and early design, framing the strength-to-weight optimisation problem with data.",links:[]},
 
- {cat:"mech",img:"assets/img/solar.png",date:"May 2025",title:"Project SolarAid — Emergency Solar Generator",report:"reports/SolarAid-Design-Proposal.pdf",ctx:"Intro to Professional Engineering Practice · Team of 4 (Group 3)",grp:"Group",
+ {cat:"mech",img:"solar.png",date:"May 2025",title:"Project SolarAid — Emergency Solar Generator",report:"SolarAid-Design-Proposal.pdf",ctx:"Intro to Professional Engineering Practice · Team of 4 (Group 3)",grp:"Group",
   desc:"Design proposal for a portable, solar-powered emergency generator to supply power to disaster-prone, vulnerable communities.",
   role:"Collaborative design; contributed to concept screening, requirements and the design proposal.",
   chips:["Renewable energy","Requirements","Concept screening","CAD"],
   result:"Screened 16 concepts to a single solution: an MPPT solar generator in a fireproof ACP enclosure meeting flood, heat and emissions constraints.",links:[]},
 
- {cat:"software",date:"2025",title:"Unit Converter UI (MATLAB)",report:"reports/Unit-Converter-MATLAB.pdf",reportLabel:"Project report (PDF)",ctx:"Intro to Professional Engineering Practice · Individual",grp:"Individual",
-  glyph:"⌗",fn:"unitconverter.m",img:"assets/img/unit.png",
+ {cat:"software",date:"2025",title:"Unit Converter UI (MATLAB)",report:"Unit-Converter-MATLAB.pdf",reportLabel:"Project report (PDF)",ctx:"Intro to Professional Engineering Practice · Individual",grp:"Individual",
+  glyph:"⌗",fn:"unitconverter.m",img:"unit.png",
   desc:"A text-based metric⇄imperial unit converter (temperature, length, volume) with menu navigation, input validation and error handling.",
   role:"Individually designed, flow-charted and implemented in MATLAB.",
   chips:["MATLAB","UI logic","Input validation","Flowcharting"],
@@ -331,7 +332,14 @@ const P=[
   result:"Working catalog, inventory and tasting-journal data model with auth and a tested API surface.",
   links:[{t:"View code",u:"https://github.com/hughdwill-byte/Wine-Cellar-App"}]},
 
- {cat:"software",date:"Personal · 2025–26",title:"Daily Ranked News",ctx:"Personal project · Individual",grp:"Individual",
+  {cat:"software",date:"Personal \u00b7 2026",title:"DealBoard \u2014 iOS Deals Tracker",ctx:"Personal project \u00b7 Individual",grp:"Individual",
+  glyph:"\uf8ff",fn:"SwiftUI \u00b7 SwiftData",
+  desc:"An offline-first iOS app for tracking recurring food &amp; drink deals nearby \u2014 browse by weekday, or snap a photo of a deal board and let on-device text recognition fill in the details \u2014 now with optional cloud sharing so friends follow the same board with a code.",
+  role:"Sole builder; native Apple frameworks for everything core (SwiftUI, SwiftData, Vision OCR, MapKit), plus an optional Supabase cloud-sharing layer over plain URLSession.",
+  chips:["Swift","SwiftUI","SwiftData","Vision OCR","MapKit","Supabase"],
+  result:"Working iOS app: photo-to-OCR deal capture, GPS venue matching, offline browsing, and optional share-code cloud sync (last-write-wins) so a group keeps one board in step.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/DealBoard"}]},
+{cat:"software",date:"Personal · 2025–26",title:"Daily Ranked News",ctx:"Personal project · Individual",grp:"Individual",
   glyph:"✉",fn:"Power Automate flow",
   desc:"An automated workflow that gathers the day's news, ranks the stories and delivers a digest by email each day.",
   role:"Designed the Power Automate flow and email report; built as a no-code automation.",
@@ -355,6 +363,7 @@ function cardHTML(p){
   const chips=(p.chips||[]).map(c=>`<span class="chip">${c}</span>`).join('');
   const links=(p.links||[]).map(l=>`<a href="${l.u}" target="_blank" rel="noopener">${l.t} ↗</a>`).join('');
   const report = p.report?`<a href="${p.report}" target="_blank" rel="noopener">${p.reportLabel||'Report (PDF)'} ↗</a>`:'';
+  const note = p.note?`<div class="note-mini">${p.note}</div>`:'';
   return `<article class="card" data-cat="${p.cat}">
     ${thumb}
     <div class="card-body">
@@ -365,7 +374,7 @@ function cardHTML(p){
       <p><span class="role">${p.role}</span></p>
       <div class="chips">${chips}</div>
       <div class="result">${p.result}</div>
-      <div class="card-links">${links}${report}</div>
+      <div class="card-links">${links}${report}</div>${note}
     </div></article>`;
 }
 
