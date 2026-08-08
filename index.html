@@ -84,6 +84,9 @@ section{padding:48px 0}
 .badge{font-size:.7rem;font-weight:bold;padding:3px 7px;border:2px solid #000;background:#fff;color:#000}
 .badge.group{background:var(--teal);color:#fff}
 .badge.indiv{background:var(--accent);color:#fff}
+.badge.afp{background:#8fba53;color:#fff}
+.badge.star{background:#f5b301;color:#000}
+.badge.ai{background:#111;color:#fff}
 .card-body{padding:16px;display:flex;flex-direction:column;flex:1}
 .card-body .date{font-size:.76rem;color:var(--accent);font-weight:bold;text-transform:uppercase}
 .card-body h3{font-size:1.12rem;margin:5px 0 3px}
@@ -111,8 +114,8 @@ footer p{color:#d4ddec;max-width:54ch}
   <div class="wrap">
     <span class="brand">Hugh Williams</span>
     <div class="links">
-      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/hughdwill-byte" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -133,12 +136,31 @@ footer p{color:#d4ddec;max-width:54ch}
     </div>
   </header>
 
+<section id="projects" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="k">Portfolio</div>
+      <h2>Projects</h2>
+      <p>Group projects note my individual contribution.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="aero">Aerospace</button>
+      <button class="filter" data-f="mech">Mechanical</button>
+      <button class="filter" data-f="software">Software</button>
+    </div>
+
+    <div class="grid" id="grid"><!-- cards injected --></div>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
     <div class="sec-head">
       <div class="k">Capabilities</div>
       <h2>Skills</h2>
-      
+
     </div>
     <div class="skillgrid">
       <div class="skillcard">
@@ -165,7 +187,7 @@ footer p{color:#d4ddec;max-width:54ch}
       <div class="skillcard">
         <h3><span class="dot"></span>Programming &amp; data</h3>
         <ul>
-          <li>Python</li><li>MATLAB</li><li>TypeScript / Next.js</li><li>SQL / PostgreSQL</li>
+          <li>Python</li><li>MATLAB</li><li>Swift / SwiftUI (iOS)</li><li>TypeScript / Next.js</li><li>SQL / PostgreSQL</li>
           <li>Machine learning (from scratch)</li><li>Excel data analysis</li><li>Power Automate</li>
         </ul>
       </div>
@@ -177,25 +199,6 @@ footer p{color:#d4ddec;max-width:54ch}
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="projects" style="padding-top:10px">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="k">Portfolio</div>
-      <h2>Projects</h2>
-      <p>Group projects note my individual contribution.</p>
-    </div>
-
-    <div class="filters" id="filters">
-      <button class="filter active" data-f="all">All</button>
-      <button class="filter" data-f="aero">Aerospace</button>
-      <button class="filter" data-f="mech">Mechanical</button>
-      <button class="filter" data-f="software">Software</button>
-    </div>
-
-    <div class="grid" id="grid"><!-- cards injected --></div>
   </div>
 </section>
 
@@ -285,6 +288,22 @@ const P=[
   chips:["Renewable energy","Requirements","Concept screening","CAD"],
   result:"Screened 16 concepts to a single solution: an MPPT solar generator in a fireproof ACP enclosure meeting flood, heat and emissions constraints.",links:[]},
 
+ {cat:"software",img:"afp-willow.png",date:"Apple Foundation Program · 2026",title:"Willow — Shared Free-Time Calendar",ctx:"Apple Foundation Program · Team of 5 (Factory Default)",grp:"Group",
+  tags:[{t:"Apple Foundation",cls:"afp"},{t:"★ Original",cls:"star"}],
+  desc:"A shared iOS calendar that finds the free time busy couples already have — instead of showing what's <em>on</em>, Willow shows what <em>isn't</em>, and nudges you when you're both free. Designed, prototyped and pitched by a team of five in <strong>Apple's Foundation Program</strong>.",
+  role:"My role: one of the five-person team through the full Challenge Based Learning cycle — problem research, design-thinking and the SwiftUI prototype.",
+  chips:["SwiftUI","Design Thinking","Challenge Based Learning","Figma","iOS"],
+  result:"The original Apple Foundation Program project (full write-up, flow video &amp; pitch in the README). An AI-assisted <em>finished</em> build follows next — this one is the original.",
+  links:[{t:"Original repo + README",u:"https://github.com/hughdwill-byte/AFP-App"},{t:"Compare: AI-built version →",u:"https://github.com/hughdwill-byte/Calendar-App"}]},
+
+ {cat:"software",img:"calendar-willow.png",date:"Personal · 2026",title:"Willow — Finished Build (AI-assisted)",ctx:"AI-assisted rebuild of the AFP project · Individual",grp:"Individual",
+  tags:[{t:"AI build",cls:"ai"},{t:"Finished app",cls:"afp"}],
+  desc:"The same <strong>Willow</strong> concept from the Apple Foundation Program, taken to a fully working iOS app with the help of AI coding tools. Reads your real device calendars via EventKit, computes each day's free windows, and combines calendars across a group entirely on-device — no backend, no paid APIs.",
+  role:"Solo follow-up build: extended the original AFP concept into a complete, tested SwiftUI app.",
+  chips:["SwiftUI","SwiftData","EventKit","Offline groups","AI-assisted"],
+  result:"Working app: weekly free-time timeline, share-a-code offline groups, seasonal home art and settings — the finished version of the original AFP project above.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Calendar-App"},{t:"See the original AFP project →",u:"https://github.com/hughdwill-byte/AFP-App"}]},
+
  {cat:"software",date:"2025",title:"Unit Converter UI (MATLAB)",report:"Unit-Converter-MATLAB.pdf",reportLabel:"Project report (PDF)",ctx:"Intro to Professional Engineering Practice · Individual",grp:"Individual",
   glyph:"⌗",fn:"unitconverter.m",img:"unit.png",
   desc:"A text-based metric⇄imperial unit converter (temperature, length, volume) with menu navigation, input validation and error handling.",
@@ -333,7 +352,7 @@ const P=[
   links:[{t:"View code",u:"https://github.com/hughdwill-byte/Wine-Cellar-App"}]},
 
   {cat:"software",date:"Personal \u00b7 2026",title:"DealBoard \u2014 iOS Deals Tracker",ctx:"Personal project \u00b7 Individual",grp:"Individual",
-  glyph:"\uf8ff",fn:"SwiftUI \u00b7 SwiftData",
+  glyph:"\u2318",fn:"SwiftUI \u00b7 SwiftData",
   desc:"An offline-first iOS app for tracking recurring food &amp; drink deals nearby \u2014 browse by weekday, or snap a photo of a deal board and let on-device text recognition fill in the details \u2014 now with optional cloud sharing so friends follow the same board with a code.",
   role:"Sole builder; native Apple frameworks for everything core (SwiftUI, SwiftData, Vision OCR, MapKit), plus an optional Supabase cloud-sharing layer over plain URLSession.",
   chips:["Swift","SwiftUI","SwiftData","Vision OCR","MapKit","Supabase"],
@@ -349,7 +368,8 @@ const P=[
 ];
 
 function cardHTML(p){
-  const badge = `<span class="badge ${p.grp==='Group'?'group':'indiv'}">${p.grp}</span>`;
+  const badge = `<span class="badge ${p.grp==='Group'?'group':'indiv'}">${p.grp}</span>`
+    + (p.tags||[]).map(t=>`<span class="badge ${t.cls}">${t.t}</span>`).join('');
   let thumb;
   if(p.img && p.cat!=='software'){
     thumb=`<div class="thumb"><img src="${p.img}" alt="${p.title} project visual" loading="lazy"><div class="badges">${badge}</div></div>`;
