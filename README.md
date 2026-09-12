@@ -9,6 +9,7 @@ Personal portfolio site: aerospace engineering and business projects, lab report
 - `index.html` — the single-page portfolio
 - `assets/img/` — project thumbnails
 - `reports/` — full project PDFs, including:
+  - Wildfire Detection & Monitoring System (Systems Engineering)
   - Wing Box Strength Analysis
   - Composite Airfoil Report
   - Wind Tunnel Labs (aerofoil lift, boundary layer)
