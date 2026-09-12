@@ -246,6 +246,12 @@ const P=[
   chips:["NACA 0012","Pressure distribution","Force balance","Validation"],
   result:"Plotted the measured lift curve — capturing the rise to stall near 14° — and compared the pressure-tap and force-balance methods against literature values.",links:[]},
 
+ {cat:"mech",img:"wildfire.png",date:"September 2026",title:"Wildfire Detection &amp; Monitoring System",report:"Wildfire-Detection-Monitoring-System.pdf",ctx:"MIET2385 Systems Engineering Principles · Individual",grp:"Individual",
+  desc:"A systems-engineering definition of a wildfire detection and monitoring system that fuses satellite feeds and UAV patrols, autonomously screens for anomalies, confirms fires at an operations hub, and alerts responders and the public with a geolocation and estimated fire coverage.",
+  role:"Individually authored systems-definition &amp; functional-hierarchy report, applying the V-lifecycle from stakeholder needs and CONOPS through user and system requirements to the functional and physical architecture.",
+  chips:["Systems engineering","V-lifecycle","CONOPS","Requirements","FFBD","Architecture"],
+  result:"Defined 7 subsystems and 8 functions with a full requirements set, traceability matrix, FFBDs and KPIs — including detecting fires before they cover 5 acres and delivering a confirmed alert within 10 minutes of ignition.",links:[]},
+
  {cat:"mech",img:"rover.png",date:"September 2025",title:"Lunar Rover — Powerpack &amp; Solar Module",report:"Lunar-Rover-Design-Journal.pdf",reportLabel:"Design journal (PDF)",ctx:"OENG1250 Intro to Engineering Design · Individual (within Group 184)",grp:"Individual",
   desc:"Designed the energy-storage powerpack and solar module for a lunar rover, packaging cylindrical 18650 Li-ion cells within mass and assembly constraints.",
   role:"Individual component design, CAD and design journal; integrated with the team's rover assembly.",
@@ -303,6 +309,24 @@ const P=[
   chips:["SwiftUI","SwiftData","EventKit","Offline groups","AI-assisted"],
   result:"Working app: weekly free-time timeline, share-a-code offline groups, seasonal home art and settings — the finished version of the original AFP project above.",
   links:[{t:"View code",u:"https://github.com/hughdwill-byte/Calendar-App"},{t:"See the original AFP project →",u:"https://github.com/hughdwill-byte/AFP-App"}]},
+
+ {cat:"software",date:"Personal · 2026",title:"Study HUD — Desktop Study Overlay",ctx:"Personal project · Individual",grp:"Individual",
+  tags:[{t:"AI build",cls:"ai"}],
+  glyph:"◫",fn:"C# · .NET · WPF",
+  desc:"A Windows desktop study assistant: an always-on-top, click-through HUD overlay with configurable macros, one-gesture screenshot capture and multi-monitor layouts, plus a <strong>deterministic Question Finder</strong> that searches your own locally-indexed Notion notes — no generative AI, no answers invented.",
+  role:"Sole builder (AI-assisted): a multi-project .NET/WPF solution spanning capture, OCR, macros, Notion sync, search, overlay and storage.",
+  chips:["C#",".NET","WPF","Win32","Windows OCR","Notion API"],
+  result:"Working preview app: ghost / click-through overlay, a macro system and an on-device Notion note search that stays fully deterministic — shipped as a self-contained Windows download.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Study-Assistant"}]},
+
+ {cat:"software",date:"Personal · 2026",title:"Poker Assistant — Texas Hold'em Advisor",ctx:"Personal project · Individual",grp:"Individual",
+  tags:[{t:"AI build",cls:"ai"}],
+  glyph:"♠",fn:"HTML · CSS · JS",
+  desc:"A zero-install web app that shows your <strong>real chance of winning</strong> a Texas Hold'em hand and recommends whether to bet, call, raise, check or fold — and how much. Exact odds by full enumeration when only the board runout is unknown, otherwise a fast Monte-Carlo simulation, all off the main thread.",
+  role:"Sole builder (AI-assisted): the equity engine, pot-odds / EV betting advice, an opt-in range-aware GTO mode, a Manifest V3 browser-extension HUD and an iPhone-grade mobile layout.",
+  chips:["JavaScript","Monte-Carlo","Pot odds / EV","GTO analytics","Web Workers","PWA"],
+  result:"Runs entirely in the browser — no server, no build step — for free GitHub Pages hosting: live win-probability per player, best / worst outlook, and an EV-ranked action recommendation.",
+  links:[{t:"View code",u:"https://github.com/hughdwill-byte/Poker-Assistant/tree/claude/texas-holdem-poker-assistant-zmvna2"}]},
 
  {cat:"software",date:"2025",title:"Unit Converter UI (MATLAB)",report:"Unit-Converter-MATLAB.pdf",reportLabel:"Project report (PDF)",ctx:"Intro to Professional Engineering Practice · Individual",grp:"Individual",
   glyph:"⌗",fn:"unitconverter.m",img:"unit.png",
